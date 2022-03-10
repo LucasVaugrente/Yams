@@ -1,0 +1,68 @@
+programme yams c'est
+début
+    nom1, nom2 , autre: chaine(50);
+    type tabcombi = tableau[0..13] de réel; // Création d'un tableau de combinaisons pour voir plus tard quelles sont celles qui sont déjà prises ou non. -1 signifie qu'elle est libre et 0 qu'elle est déjà utilisée.
+    type tabjoueur = tableau[1..2] de tabcombi;  // Création d'un tableau pour lister toutes les combinaisons des 2 joueurs.
+    type dés = tableau[1..5] de entier; // Création d'un tableau pour l'affichage des dés
+    écrireEcran("Entrer le nom du joueur 1");
+    lireClavier(nom1);
+    écrireEcran("Entrer le nom du joueur 2");
+    lireClavier(nom2);
+    autre=nom1;
+    pour i de 1 à 26 faire
+
+        selon autre c'est
+
+            quand nom1 => 
+                afficherFeuille();
+                lancerDés(entE 5);
+                validationJoueur();
+                choixCombinaison(entE nom1);
+                miseajourfeuille();
+                autre=nom2;
+
+            quand nom2 => 
+                afficherFeuille();
+                lancerDés(entE 5);
+                validationJoueur();
+                choixCombinaison(entE nom2);
+                miseajourfeuille();
+                autre=nom1;
+
+        finselon
+
+    finfaire
+
+    afficherResultat(entE score1, entE score2);
+fin
+
+
+procédure afficherFeuille() c'est
+début
+"Affiche la feuille de marque du joueur avec un tableau à 2 dimensions"
+fin
+
+procédure lancerDés(entF nbr_dés : entier) c'est
+début
+"Avec une fonction random, affiche un tableau de nbr_dés indices qui montrent les valeurs des dés obtenus"
+fin
+
+procédure validationJoueur() c'est
+début
+"Tant que le joueur n'a pas atteint ses 3 essais ou qu'il n'a pas validé son tour, cela propose quels dés il veut relancer en réappelant la procédure lancerDés avec comme paramètre le nombre de dés (inférieur ou égal à 5) qu'il souhaite changer et en stockant les valeurs des autres dés gardés"
+fin
+
+procédure choixCombinaison(entF joueur : chaine(50)) c'est
+début
+"Affiche le tableau des combinaisons restantes du joueur indiqué en paramètre et attend une réponse du joueur pour qu'il puisse valider la combinaison. Si la combinaison est déjà prise (c'est-à-dire que la valeur est égale à 0), cela redemande au joueur de rentrer une combinaison lui indiquant qu'elle est déjà prise"
+fin
+
+procédure miseajourfeuille() c'est
+début
+"Modifie les valeurs du tableau de la feuille de marque"
+fin
+
+procédure afficheResultat(entF score1 : entier, entF score2 : entier) c'est
+début
+"Affiche le total de chaque joueur et affiche le gagnant en faisant un comparaison des 2 scores"
+fin 
