@@ -2,7 +2,7 @@
 - Langage : C
 - Projet seul
 
-- Contexte (Consignes)
+  - Contexte (Consignes) :
 
 L’association « Les têtes à clic » intervient dans les écoles maternelles et primaires
 pour familiariser les élèves à l’utilisation de logiciels. Elle développe aussi des petits
