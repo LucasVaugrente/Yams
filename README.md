@@ -1,6 +1,7 @@
 - Projet terminé 
 - Langage : C
 - Projet seul
+- Utilisation de Doxygen pour commenter le code
 
   - Contexte (Consignes) :
 
